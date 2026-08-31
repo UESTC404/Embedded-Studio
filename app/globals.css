@@ -450,8 +450,23 @@ body > * {
 
 .studio-image {
   display: block;
+  max-width: 100%;
   height: auto;
   margin-block: 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--studio-blue-500), transparent 72%);
+  border-radius: 0.72rem;
+  cursor: zoom-in;
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--studio-blue-900), transparent 93%);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-image:hover {
+  border-color: color-mix(in srgb, var(--studio-blue-500), transparent 35%);
+  box-shadow: 0 5px 18px color-mix(in srgb, var(--studio-blue-900), transparent 88%);
+  transform: translateY(-1px);
 }
 
 .studio-image--left {
@@ -460,8 +475,119 @@ body > * {
 }
 
 .studio-image--center,
+.studio-image--small,
+.studio-image--medium,
+.studio-image--large,
 .studio-image--wide {
   margin-inline: auto;
+}
+
+.studio-image--small {
+  width: min(100%, 20rem);
+}
+
+.studio-image--medium {
+  width: min(100%, 34rem);
+}
+
+.studio-image--large {
+  width: min(100%, 46rem);
+}
+
+/* Two or more consecutive image-only paragraphs become a responsive gallery. */
+.studio-content p:has(> .studio-image):has(+ p > .studio-image),
+.studio-content p:has(> .studio-image) + p:has(> .studio-image) {
+  display: inline-block;
+  width: calc(50% - 0.75rem);
+  margin: 0.45rem 0.25rem;
+  vertical-align: top;
+}
+
+.studio-content p:has(> .studio-image):has(+ p > .studio-image) > .studio-image,
+.studio-content p:has(> .studio-image) + p:has(> .studio-image) > .studio-image {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 16 / 10;
+  margin: 0;
+  object-fit: cover;
+}
+
+.studio-lightbox {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgb(3 12 18 / 82%);
+  backdrop-filter: blur(8px);
+}
+
+.studio-lightbox-panel {
+  position: relative;
+  display: flex;
+  max-width: min(94vw, 88rem);
+  max-height: 92vh;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 0.9rem;
+  background: #07151d;
+  box-shadow: 0 1.5rem 5rem rgb(0 0 0 / 42%);
+}
+
+.studio-lightbox-panel > img {
+  display: block;
+  max-width: 92vw;
+  max-height: calc(92vh - 3.25rem);
+  object-fit: contain;
+}
+
+.studio-lightbox-toolbar {
+  display: flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0.85rem;
+  color: rgb(255 255 255 / 78%);
+  font-size: 0.85rem;
+}
+
+.studio-lightbox-toolbar > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studio-lightbox-toolbar > a {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.35rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.studio-lightbox-toolbar svg,
+.studio-lightbox-close svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.studio-lightbox-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 999px;
+  background: rgb(3 12 18 / 72%);
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .studio-comments {
@@ -605,6 +731,13 @@ body > * {
   .studio-pdf-viewer iframe {
     height: 68vh;
     min-height: 26rem;
+  }
+
+  .studio-content p:has(> .studio-image):has(+ p > .studio-image),
+  .studio-content p:has(> .studio-image) + p:has(> .studio-image) {
+    display: block;
+    width: 100%;
+    margin: 0.65rem 0;
   }
 
   body::before {

@@ -13,7 +13,14 @@ const DefaultLink = defaultMdxComponents.a;
 const DefaultImage = defaultMdxComponents.img;
 
 type FileMode = 'card' | 'preview' | 'link';
-type ImagePosition = 'left' | 'center' | 'right' | 'wide';
+type ImageLayout =
+  | 'left'
+  | 'center'
+  | 'right'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'wide';
 
 function splitFileMode(href: string): {
   source: string;
@@ -163,8 +170,8 @@ function StudioImage({
     return <DefaultImage {...props} src={src} className={className} />;
   }
 
-  const match = src.match(/#(left|center|right|wide)$/i);
-  const position = (match?.[1].toLowerCase() as ImagePosition | undefined) ??
+  const match = src.match(/#(left|center|right|small|medium|large|wide)$/i);
+  const layout = (match?.[1].toLowerCase() as ImageLayout | undefined) ??
     'center';
   const source = match ? src.slice(0, -match[0].length) : src;
 
@@ -174,7 +181,7 @@ function StudioImage({
       src={withBasePath(source)}
       className={[
         'studio-image',
-        `studio-image--${position}`,
+        `studio-image--${layout}`,
         className,
       ]
         .filter(Boolean)

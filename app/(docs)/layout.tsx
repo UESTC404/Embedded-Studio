@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import Image from 'next/image';
+import { ImageLightbox } from '@/components/image-lightbox';
 import { StaticNavigation } from '@/components/static-navigation';
 import { source } from '@/lib/source';
 import { withBasePath } from '@/lib/site';
@@ -8,6 +9,7 @@ import { withBasePath } from '@/lib/site';
 export default function DocsRootLayout({ children }: { children: ReactNode }) {
   return (
     <>
+      <ImageLightbox />
       <StaticNavigation />
       <DocsLayout
         tree={source.getPageTree()}
@@ -25,8 +27,8 @@ export default function DocsRootLayout({ children }: { children: ReactNode }) {
                 priority
               />
               <span>
-                <strong>Embedded Studio</strong>
-                <small>OFFICIAL WEBSITE</small>
+                <strong>嵌入式工作室</strong>
+                <small>Embedded Studio</small>
               </span>
             </span>
           ),

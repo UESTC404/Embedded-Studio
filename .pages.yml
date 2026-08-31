@@ -45,13 +45,30 @@ content:
       - name: body
         label: 页面正文
         type: rich-text
-        description: 图片可直接插入；PDF 等附件请先上传到“文件库”，再于源码模式插入文件链接。
+        description: 连续插入两张及以上图片会自动排成两列画廊，手机端自动变为单列，点击图片可查看原图。单张图片可在源码模式给地址末尾添加 #small、#medium、#large 或 #wide 调整尺寸；PDF 等附件请先上传到“文件库”，再于源码模式插入文件链接。
         options:
           format: markdown
           media: images
           switcher: true
           categories: [image]
           rename: safe
+
+  - name: navigation
+    label: 左侧导航
+    type: file
+    path: content/docs/meta.json
+    format: json
+    fields:
+      - name: title
+        label: 导航总标题
+        type: string
+        required: true
+      - name: pages
+        label: 页面顺序与分类
+        type: string
+        list: true
+        required: true
+        description: 拖动条目可调整顺序；页面填写文件名（如 about、resources）；分类标题使用 ---分类名---（如 ---认识工作室---）；“...”表示自动加入未列出的页面。
 
 settings:
   content:
