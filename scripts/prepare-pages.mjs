@@ -1,7 +1,9 @@
 import { spawn } from 'node:child_process';
 import {
   access,
+  copyFile,
   mkdir,
+  readdir,
   rename,
   rm,
   writeFile,
@@ -96,8 +98,33 @@ async function flattenPrefixedAssets() {
   await rm(nestedRoot, { recursive: true, force: true });
 }
 
+async function createCleanRouteEntries() {
+  const entries = await readdir(outputDir, { withFileTypes: true });
+
+  await Promise.all(
+    entries
+      .filter(
+        (entry) =>
+          entry.isFile() &&
+          entry.name.endsWith('.html') &&
+          entry.name !== 'index.html' &&
+          entry.name !== '404.html',
+      )
+      .map(async (entry) => {
+        const route = entry.name.slice(0, -'.html'.length);
+        const routeDir = path.join(outputDir, route);
+        await mkdir(routeDir, { recursive: true });
+        await copyFile(
+          path.join(outputDir, entry.name),
+          path.join(routeDir, 'index.html'),
+        );
+      }),
+  );
+}
+
 await exportSearchIndex();
 await flattenPrefixedAssets();
+await createCleanRouteEntries();
 await writeFile(path.join(outputDir, '.nojekyll'), '', 'utf8');
 await rm(path.join(outputDir, '.DS_Store'), { force: true });
 
