@@ -1,8 +1,7 @@
 ---
-title: Embedded Studio
-description: 在实践中学习，建立属于自己的完整计算机体系。
+title: 嵌入式工作室 · Embedded Studio
+description: To learn by doing.
 ---
-
 ## 工作室简介
 
 > 💡 嵌入式工作室成立于 **2011 年**，是泥软历史最悠久的工作室。没错，比隔壁医学院资历还老～
