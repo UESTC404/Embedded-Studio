@@ -40,7 +40,7 @@ export default async function Page({ params }: PageProps) {
         categoryId={
           process.env.GISCUS_CATEGORY_ID || 'DIC_kwDOUKD8Vs4DEm64'
         }
-        pageKey={slug.length > 0 ? `/${slug.join('/')}` : '/'}
+        pageKey={page.data.id}
       />
     </DocsPage>
   );
