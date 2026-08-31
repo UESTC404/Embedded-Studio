@@ -1,6 +1,7 @@
 ---
 title: 🧰 奇奇怪怪的工具箱
 description: 该板块用于提供工作室部分硬件的使用指南和网络中一些奇奇怪怪但有用的工具
+slug: resources
 ---
 放入该板块的网络资源内容需保证**可用性强，安全可靠**
 
@@ -16,7 +17,7 @@ description: 该板块用于提供工作室部分硬件的使用指南和网络�
 
 ## 3D打印机
 
-
+[Kobra Neo 3D 打印机使用手册](/files/manual-kobra-neo.pdf "10.61 MiB · PDF 使用手册")
 
 ## 打印机
 
@@ -80,4 +81,3 @@ description: 该板块用于提供工作室部分硬件的使用指南和网络�
 - [CamScanner（全能扫描王）](https://www.camscanner.com/file/recent)用于文档拍照扫描增强
 - [SPSSPRO-免费专业的在线数据分析平台](https://www.spsspro.com/)（在线数据分析平台，比较强大）
 - 谷歌学术：[scholar.google.com.hk](http://scholar.google.com.hk)；中文镜像站：[谷歌学术镜像_Google镜像站](https://xs.xasa.top/)
-

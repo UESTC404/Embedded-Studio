@@ -37,6 +37,11 @@ content:
         label: 页面简介
         type: text
         required: true
+      - name: slug
+        label: 页面子链接
+        type: string
+        required: false
+        description: 可选。填写英文路径，例如 toolbox；留空时沿用文件名。修改后旧链接及该页评论映射会随之变化。
       - name: body
         label: 页面正文
         type: rich-text
