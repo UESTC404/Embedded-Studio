@@ -28,8 +28,18 @@ description: To learn by doing.
 
 嵌入式工作室目前设有 **Robotics, IoT, Edge AI, Infra** 四个主要培养方向，从基础原理出发，在真实项目中建立完整的系统能力。
 
+## 🗺 工作室~~位置~~旧址😭 🗺
+
+> 📍 **三教 404 & 405的一部分**
+
+![](https://es-stdio-uestc.feishu.cn/space/api/box/stream/download/asynccode/?code=YjIyNTk2NGVkZWY3YzFkMTNhNGZmYmE1NjFhNmI2M2NfUVdveERnNXVIaVI2cVdTQmZXWDBnbEsyQ01IUW44STlfVG9rZW46WkhnbWJGSnBZb2hDRXF4U0tBMmM2eXltbkpjXzE3ODgyMTgyMTQ6MTc4ODIyMTgxNF9WNA&add_watermark=true&scene_type=CCM)
+
+![](https://es-stdio-uestc.feishu.cn/space/api/box/stream/download/asynccode/?code=OTg3NjBjZjAwMjY2YTU4M2E3NGViMTM2M2MxZjYzYjFfM0hWUWNxV0dKTlh0VzNQMm5UcWp3d25OT3B5V3pTM01fVG9rZW46WGE5dmI5TnVMb0Z2WUd4bWE3TGNDSzlHbmVjXzE3ODgyMTgyMTQ6MTc4ODIyMTgxNF9WNA&add_watermark=true&scene_type=CCM)
+
+![](https://es-stdio-uestc.feishu.cn/space/api/box/stream/download/asynccode/?code=ODk2ZTdlNzhlNzcxZDRmYjkyNTYzZjQyYjAzZTg1NDRfd1RUM0xCb3hBWERtbk92dkdqcWdSR21uSkVPYk5OMGFfVG9rZW46UGEyQmJqY2dVbzlPRzZ4eDRIU2NEc2dObnBjXzE3ODgyMTgyMTQ6MTc4ODIyMTgxNF9WNA&add_watermark=true&scene_type=CCM)
+
+![](https://es-stdio-uestc.feishu.cn/space/api/box/stream/download/asynccode/?code=MThmYmRkZDgxNjA1YmE3YzMyMjcwNWVhYjlhZGU0ZWZfNDZiMGx2TFZnNlJOVTFjZXZuYm16aUE1R0RKd0NmWFJfVG9rZW46VjA0dmJWSk1xb2FnTGx4aE9kNGNHaVhUbkZiXzE3ODgyMTgyMTQ6MTc4ODIyMTgxNF9WNA&add_watermark=true&scene_type=CCM)
+
 ## 加入我们
 
 QQ招新群号: 1061735845  
-  
-  
