@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
+import type { CSSProperties } from 'react';
 import { RootProvider } from 'fumadocs-ui/provider/next';
 import { siteBasePath, siteUrl, withBasePath } from '@/lib/site';
 import './globals.css';
 
 const socialPreviewUrl = `${siteUrl}/images/ES-logo.png`;
+const bodyStyle = {
+  '--studio-watermark-image': `url("${withBasePath('/images/ES.png')}")`,
+} as CSSProperties;
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}/`),
@@ -41,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body>
+      <body style={bodyStyle}>
         <RootProvider
           theme={{ defaultTheme: 'light', enableSystem: false }}
           search={{
