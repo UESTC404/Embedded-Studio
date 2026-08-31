@@ -1,5 +1,5 @@
 ---
-title: 加入我们
+title: 🤗 加入我们
 description: 招新安排、培养计划与联系方式。
 slug: joinus
 ---
