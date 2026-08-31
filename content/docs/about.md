@@ -1,4 +1,5 @@
 ---
+id: cc9923d8-0224-42ea-98e7-bd3da5134123
 title: 工作室简介
 description: 了解 Embedded Studio 的历史、环境与组织方式。
 ---

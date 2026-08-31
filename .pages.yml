@@ -14,34 +14,40 @@ media:
 
 content:
   - name: docs
-    label: 网站文档
+    label: 网站文档（文件名即子链接）
     type: collection
     path: content/docs
     format: yaml-frontmatter
     exclude: [meta.json]
-    filename: "{primary}.md"
+    filename:
+      template: "{primary}.md"
+      field: true
     view:
       fields: [title, description]
       primary: title
       sort: [title]
     operations:
       create: true
-      rename: false
+      rename: true
       delete: false
     fields:
+      - name: id
+        label: 文档内部 ID
+        type: uuid
+        required: true
+        hidden: true
+        options:
+          editable: false
+          generate: false
       - name: title
         label: 页面标题
         type: string
         required: true
+        description: 网页正文和左侧导航显示的名称；修改后所有显示位置会自动同步。
       - name: description
         label: 页面简介
         type: text
         required: true
-      - name: slug
-        label: 页面子链接
-        type: string
-        required: false
-        description: 可选。填写英文路径，例如 toolbox；留空时沿用文件名。修改后旧链接及该页评论映射会随之变化。
       - name: body
         label: 页面正文
         type: rich-text
@@ -81,7 +87,7 @@ content:
                 options:
                   collection: docs
                   search: title,description
-                  value: "{name}"
+                  value: "{fields.id}"
                   label: "{primary}"
           - name: category
             label: 分类标题

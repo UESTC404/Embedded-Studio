@@ -7,7 +7,7 @@ const docs = defineDocs({
   dir: 'content/docs',
   docs: {
     schema: pageSchema.extend({
-      slug: pageSchema.shape.title.optional(),
+      id: pageSchema.shape.title,
     }),
   },
 });
@@ -15,10 +15,4 @@ const docs = defineDocs({
 export const source = loader({
   baseUrl: siteBasePath || '/',
   source: docs.toFumadocsSource(),
-  slugs(file) {
-    const slug = file.data.slug?.trim();
-    if (!slug) return undefined;
-
-    return slug.split('/').filter(Boolean);
-  },
 });
