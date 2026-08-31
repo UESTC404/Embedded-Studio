@@ -1,0 +1,57 @@
+media:
+  - name: images
+    label: 图片库
+    input: public/images
+    output: /images
+    rename: safe
+    categories: [image]
+  - name: documents
+    label: 文件库
+    input: public/files
+    output: /files
+    rename: safe
+    categories: [document]
+
+content:
+  - name: docs
+    label: 网站文档
+    type: collection
+    path: content/docs
+    format: yaml-frontmatter
+    exclude: [meta.json]
+    filename: "{primary}.md"
+    view:
+      fields: [title, description]
+      primary: title
+      sort: [title]
+    operations:
+      create: true
+      rename: false
+      delete: false
+    fields:
+      - name: title
+        label: 页面标题
+        type: string
+        required: true
+      - name: description
+        label: 页面简介
+        type: text
+        required: true
+      - name: body
+        label: 页面正文
+        type: rich-text
+        description: 图片可直接插入；PDF 等附件请先上传到“文件库”，再于源码模式插入文件链接。
+        options:
+          format: markdown
+          media: images
+          switcher: true
+          categories: [image]
+          rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      update: "content: 更新 {path}"
