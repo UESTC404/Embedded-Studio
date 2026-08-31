@@ -1,0 +1,40 @@
+{
+  "title": "Embedded Studio",
+  "items": [
+    {
+      "type": "page",
+      "page": "index"
+    },
+    {
+      "type": "category",
+      "label": "关于ES"
+    },
+    {
+      "type": "page",
+      "page": "about"
+    },
+    {
+      "type": "page",
+      "page": "directions"
+    },
+    {
+      "type": "category",
+      "label": "妙妙工具"
+    },
+    {
+      "type": "page",
+      "page": "guide"
+    },
+    {
+      "type": "page",
+      "page": "resources"
+    },
+    {
+      "type": "page",
+      "page": "join"
+    },
+    {
+      "type": "unlisted"
+    }
+  ]
+}

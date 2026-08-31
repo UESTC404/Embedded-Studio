@@ -38,3 +38,6 @@ next-env.d.ts
 /outputs/
 /work/
 *.tsbuildinfo
+
+# generated from content/navigation.json
+/content/docs/meta.json

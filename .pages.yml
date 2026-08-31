@@ -56,19 +56,47 @@ content:
   - name: navigation
     label: 左侧导航
     type: file
-    path: content/docs/meta.json
+    path: content/navigation.json
     format: json
     fields:
       - name: title
         label: 导航总标题
         type: string
         required: true
-      - name: pages
+      - name: items
         label: 页面顺序与分类
-        type: string
+        type: block
         list: true
         required: true
-        description: 拖动条目可调整顺序；页面填写文件名（如 about、resources）；分类标题使用 ---分类名---（如 ---认识工作室---）；“...”表示自动加入未列出的页面。
+        description: 拖动条目可调整顺序。文档项会自动显示网站文档的真实标题；标题内容请回到对应文档中修改。
+        blockKey: type
+        blocks:
+          - name: page
+            label: 文档
+            fields:
+              - name: page
+                label: 选择文档
+                type: reference
+                required: true
+                options:
+                  collection: docs
+                  search: title,description
+                  value: "{name}"
+                  label: "{primary}"
+          - name: category
+            label: 分类标题
+            fields:
+              - name: label
+                label: 分类名称
+                type: string
+                required: true
+          - name: unlisted
+            label: 自动加入未列出页面
+            fields:
+              - name: note
+                label: false
+                type: string
+                hidden: true
 
 settings:
   content:

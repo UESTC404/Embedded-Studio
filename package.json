@@ -6,9 +6,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
-    "build:pages": "vinext build && node scripts/prepare-pages.mjs",
+    "dev": "node scripts/generate-navigation.mjs && vinext dev",
+    "build": "node scripts/generate-navigation.mjs && vinext build",
+    "build:pages": "node scripts/generate-navigation.mjs && vinext build && node scripts/prepare-pages.mjs",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
