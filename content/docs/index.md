@@ -2,6 +2,10 @@
 title: 嵌入式工作室 · Embedded Studio
 description: To learn by doing.
 ---
+## 加入我们
+
+QQ🐧招新群号: 1061735845
+
 ## 工作室简介
 
 > 💡 嵌入式工作室成立于 **2011 年**，是泥软历史最悠久的工作室。没错，比隔壁医学院资历还老～
@@ -42,6 +46,3 @@ description: To learn by doing.
 
 ![工作室环境：公共学习区](/images/studio-room-04.png)
 
-## 加入我们
-
-QQ招新群号: 1061735845
