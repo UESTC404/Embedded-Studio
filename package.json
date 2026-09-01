@@ -6,9 +6,10 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "node scripts/generate-navigation.mjs && vinext dev",
-    "build": "node scripts/generate-navigation.mjs && vinext build",
-    "build:pages": "node scripts/generate-navigation.mjs && vinext build && node scripts/prepare-pages.mjs",
+    "validate:content": "node scripts/validate-content.mjs",
+    "dev": "npm run validate:content && node scripts/generate-navigation.mjs && vinext dev",
+    "build": "npm run validate:content && node scripts/generate-navigation.mjs && vinext build",
+    "build:pages": "npm run validate:content && node scripts/generate-navigation.mjs && vinext build && node scripts/prepare-pages.mjs",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },

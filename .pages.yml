@@ -51,7 +51,7 @@ content:
       - name: body
         label: 页面正文
         type: rich-text
-        description: 连续插入两张及以上图片会自动排成两列画廊，手机端自动变为单列，点击图片可查看原图。单张图片可在源码模式给地址末尾添加 #small、#medium、#large 或 #wide 调整尺寸；PDF 等附件请先上传到“文件库”，再于源码模式插入文件链接。
+        description: 图片请先上传到“图片库”，再从图片库插入；不要直接粘贴浏览器临时预览图。连续插入两张及以上图片会自动排成两列画廊，手机端自动变为单列，点击图片可查看原图。单张图片可在源码模式给地址末尾添加 #small、#medium、#large 或 #wide 调整尺寸；PDF 等附件请先上传到“文件库”，再于源码模式插入文件链接。
         options:
           format: markdown
           media: images

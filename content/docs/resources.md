@@ -31,5 +31,4 @@ description: ES神秘知识库
 
 > 🤔或许真的能一手抓保研一手抓考公一手抓留学一手抓实习一手抓···
 
-![image.png](blob:https:/app.pagescms.org/d2692665-cb7c-4d1e-9107-fbf9ff6a8c55)
-
+![各方向学习路线与资源汇总](/images/image-10.png)
