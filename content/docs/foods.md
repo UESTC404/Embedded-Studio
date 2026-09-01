@@ -7,7 +7,7 @@ description: 分母老师の嵌入皇室御膳房菜谱
 
 > 分母老师の嵌入皇室御膳房菜谱
 
-1. 
+
 
 ##### [美团]蔡大胖炸洋芋
 
@@ -19,7 +19,6 @@ description: 分母老师の嵌入皇室御膳房菜谱
   1. 味道一般般，解辣
 3. 打包费1.8，无配送费
 
-2. 
 
 ##### 朝家瓦舍拌饭馆
 
@@ -27,22 +26,20 @@ description: 分母老师の嵌入皇室御膳房菜谱
   1. 芝士！
 2. 麻婆豆腐拌米饭，不怕辣的一定要吃
 
-3. 
 
 ##### [美团]必胜客
 
 1. 薯角培根手拍普装兑换券29.9
   1. 好次且一个人吃不完！
 2. 打包+配送6.5
-
-4. **蓝屿白云南菜**
+3. **蓝屿白云南菜**
   1. 好吃好吃好吃！味道偏辣，价格适中，人均30到60都可以吃的很好
   2. 店内很多扎染的装饰品，很好看
-5. **蚂蚁猪脚姜**
+4. **蚂蚁猪脚姜**
   1. 正宗广东味，老板很有意思
   2. 蚂蚁猪脚姜 四川省成都市成华区祥和里241号
   3. [https://surl.amap.com/dwMZX6411eyf](https://surl.amap.com/dwMZX6411eyf)
-6. **米多利**
+5. **米多利**
 
 印象城B1楼一个家常菜自助，按重量算钱
 
@@ -64,7 +61,7 @@ description: 分母老师の嵌入皇室御膳房菜谱
 
 ## 西安
 
-> 队里边儿有个本地人是最好的~本地人总能找到真正好吃的肉夹馍~
+> 队里边儿有个本地人是最好的~~本地人总能找到真正好吃的肉夹馍~~
 
 - 茶话弄
   - 都来西安了怎么能不弄一下呢？
@@ -106,4 +103,10 @@ description: 分母老师の嵌入皇室御膳房菜谱
 3. 推荐嘎嘎香东北老饭盒，很不错
 
 ![](https://es-stdio-uestc.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjllYzNkOTc1ZGNjOTk0ODg1ZTdhZGRhMjUzMDJiMzVfaVN4WG9VaWgxV3NMM29PdFo0eGJ4emJVV055VlBpcERfVG9rZW46Q3F2T2I1Mnp6b3RWVDh4RVlwMmM2MnFQblFlXzE3ODgyMjM5NTg6MTc4ODIyNzU1OF9WNA&add_watermark=true&scene_type=CCM)
+
+
+
+# 欢迎加入“沙大吃吃吃”
+
+![image.png](/images/image-11.png)
 
