@@ -19,13 +19,11 @@ description: 分母老师の嵌入皇室御膳房菜谱
   1. 味道一般般，解辣
 3. 打包费1.8，无配送费
 
-
 ##### 朝家瓦舍拌饭馆
 
 1. 美团一人吃饱饱单人餐 ￥19.8 还不错
   1. 芝士！
 2. 麻婆豆腐拌米饭，不怕辣的一定要吃
-
 
 ##### [美团]必胜客
 
@@ -102,9 +100,7 @@ description: 分母老师の嵌入皇室御膳房菜谱
 2. 西门街对面有个台湾卤肉饭小摊，下午出摊，很好吃😋
 3. 推荐嘎嘎香东北老饭盒，很不错
 
-![](https://es-stdio-uestc.feishu.cn/space/api/box/stream/download/asynccode/?code=ZjllYzNkOTc1ZGNjOTk0ODg1ZTdhZGRhMjUzMDJiMzVfaVN4WG9VaWgxV3NMM29PdFo0eGJ4emJVV055VlBpcERfVG9rZW46Q3F2T2I1Mnp6b3RWVDh4RVlwMmM2MnFQblFlXzE3ODgyMjM5NTg6MTc4ODIyNzU1OF9WNA&add_watermark=true&scene_type=CCM)
-
-
+![image.png](/images/image-12.png)
 
 # 欢迎加入“沙大吃吃吃”
 
