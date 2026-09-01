@@ -51,7 +51,15 @@ export default defineConfig(async () => {
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
     plugins: [
-      fumadocsMdx(),
+      fumadocsMdx({
+        globalOptions: {
+          mdxOptions: {
+            // Image URL fragments are layout hints consumed by StudioImage.
+            // Keep them as URLs instead of turning them into static imports.
+            remarkImageOptions: { useImport: false, onError: 'ignore' },
+          },
+        },
+      }),
       vinext(),
       sites(),
       cloudflare({
