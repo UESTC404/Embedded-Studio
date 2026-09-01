@@ -1,5 +1,13 @@
 import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { Download, Eye, FileText } from 'lucide-react';
+import {
+  Archive,
+  Download,
+  Eye,
+  FileCode2,
+  FileImage,
+  FileText,
+  FileVideo,
+} from 'lucide-react';
 import type { MDXComponents } from 'mdx/types';
 import {
   Children,
@@ -49,6 +57,87 @@ function isPdf(source: string): boolean {
   return /\.pdf(?:$|\?)/i.test(source);
 }
 
+function getFileExtension(source: string): string {
+  const fileName = getFileName(source);
+  return fileName.includes('.')
+    ? fileName.slice(fileName.lastIndexOf('.') + 1).toLowerCase()
+    : '';
+}
+
+const previewableExtensions = new Set([
+  'avif',
+  'bmp',
+  'c',
+  'cc',
+  'cpp',
+  'css',
+  'csv',
+  'gif',
+  'h',
+  'html',
+  'jpeg',
+  'jpg',
+  'js',
+  'json',
+  'log',
+  'md',
+  'markdown',
+  'mov',
+  'mp4',
+  'pdf',
+  'png',
+  'py',
+  'sh',
+  'svg',
+  'toml',
+  'ts',
+  'txt',
+  'webm',
+  'webp',
+  'xml',
+  'yaml',
+  'yml',
+]);
+
+function canPreview(source: string): boolean {
+  return previewableExtensions.has(getFileExtension(source));
+}
+
+function getFileIcon(source: string): ReactNode {
+  const extension = getFileExtension(source);
+
+  if (['avif', 'bmp', 'gif', 'jpeg', 'jpg', 'png', 'svg', 'webp'].includes(extension)) {
+    return <FileImage />;
+  }
+  if (['mov', 'mp4', 'webm'].includes(extension)) return <FileVideo />;
+  if (['7z', 'rar', 'tar', 'zip'].includes(extension)) return <Archive />;
+  if (
+    [
+      'c',
+      'cc',
+      'cpp',
+      'css',
+      'h',
+      'html',
+      'js',
+      'json',
+      'md',
+      'markdown',
+      'py',
+      'sh',
+      'toml',
+      'ts',
+      'xml',
+      'yaml',
+      'yml',
+    ].includes(extension)
+  ) {
+    return <FileCode2 />;
+  }
+
+  return <FileText />;
+}
+
 function isManagedFile(source: string): boolean {
   return source.startsWith('/files/') || isPdf(source);
 }
@@ -63,12 +152,13 @@ function FileCard({
   detail?: string;
 }) {
   const pdf = isPdf(source);
+  const previewable = canPreview(source);
   const publicSource = withBasePath(source);
 
   return (
     <span className="studio-file-card">
       <span className="studio-file-icon" aria-hidden="true">
-        <FileText />
+        {getFileIcon(source)}
       </span>
       <span className="studio-file-meta">
         <a href={publicSource} target="_blank" rel="noreferrer">
@@ -77,12 +167,12 @@ function FileCard({
         <small>{detail || (pdf ? 'PDF 文档' : '可下载文件')}</small>
       </span>
       <span className="studio-file-actions">
-        {pdf && (
+        {previewable && (
           <a
             href={publicSource}
             target="_blank"
             rel="noreferrer"
-            aria-label="在新窗口预览 PDF"
+            aria-label="在新窗口预览文件"
             title="预览"
           >
             <Eye aria-hidden="true" />

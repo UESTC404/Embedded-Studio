@@ -294,6 +294,24 @@ body > * {
   margin-block: 1rem;
 }
 
+.studio-content ul:has(> li > .studio-file-card) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.studio-content li:has(> .studio-file-card) {
+  min-width: 0;
+  margin: 0;
+}
+
+.studio-content li > .studio-file-card {
+  width: 100%;
+  height: 100%;
+}
+
 .studio-file-card {
   display: flex;
   width: min(100%, 42rem);
@@ -726,6 +744,10 @@ body > * {
   .studio-file-card {
     gap: 0.65rem;
     padding: 0.7rem;
+  }
+
+  .studio-content ul:has(> li > .studio-file-card) {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .studio-pdf-viewer iframe {
