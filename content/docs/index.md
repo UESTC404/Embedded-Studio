@@ -1,7 +1,7 @@
 ---
 id: 5869ed42-67c8-4d14-8b59-26438e3c1ee0
 title: 嵌入式工作室 · Embedded Studio
-description: To learn by doing.
+description: To Learn By Doing.
 ---
 ## 加入我们
 
@@ -46,3 +46,4 @@ QQ🐧招新群号: 1061735845
 ![工作室环境：项目实践](/images/studio-room-03.png)
 
 ![工作室环境：公共学习区](/images/studio-room-04.png)
+
