@@ -29,7 +29,7 @@ content:
     operations:
       create: true
       rename: true
-      delete: false
+      delete: true
     fields:
       - name: id
         label: 文档内部 ID

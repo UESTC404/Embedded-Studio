@@ -19,6 +19,7 @@ if (!navigation.title?.trim() || !Array.isArray(navigation.items)) {
 const pages = [];
 const pageIds = new Set();
 const documentsById = new Map();
+let pendingCategory = null;
 
 for (const entry of await readdir(docsDir, { withFileTypes: true })) {
   if (!entry.isFile() || !entry.name.endsWith('.md')) continue;
@@ -37,11 +38,12 @@ for (const item of navigation.items) {
   if (item.type === 'category') {
     const label = item.label?.trim();
     if (!label) throw new Error('左侧导航中存在空的分类标题。');
-    pages.push(`---${label}---`);
+    pendingCategory = label;
     continue;
   }
 
   if (item.type === 'unlisted') {
+    pendingCategory = null;
     if (!pages.includes('...')) pages.push('...');
     continue;
   }
@@ -60,7 +62,15 @@ for (const item of navigation.items) {
   }
 
   const fileName = documentsById.get(pageId);
-  if (!fileName) throw new Error(`导航引用了不存在的文档 ID：${pageId}`);
+  if (!fileName) {
+    console.warn(`已忽略被删除文档的导航条目：${pageId}`);
+    continue;
+  }
+
+  if (pendingCategory) {
+    pages.push(`---${pendingCategory}---`);
+    pendingCategory = null;
+  }
 
   pageIds.add(pageId);
   pages.push(fileName);
