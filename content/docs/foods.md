@@ -99,7 +99,7 @@ description: 分母老师の嵌入皇室御膳房菜谱
 2. 西门街对面有个台湾卤肉饭小摊，下午出摊，很好吃😋
 3. 推荐嘎嘎香东北老饭盒，很不错
 
-![image.png](/images/image-12.png#medium)
+![image.png](/images/image-12.png#small)
 
 # 欢迎加入“沙大吃吃吃”
 
