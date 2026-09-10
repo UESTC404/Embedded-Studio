@@ -99,9 +99,7 @@ QQ🐧招新群号: 1061735845
 
 ![工作室环境：公共学习区](/images/studio-room-04.png)
 
-## 推荐资源
-
-下面这些项目与课程涵盖软院学习、嵌入式开发、计算机基础和升学准备，适合根据自己的目标按需查阅。
+## 通向大牛的第一步
 
 - [awesome-es：嵌入式与体系结构学习资源](https://github.com/UESTC404/awesome-es#card "由工作室前辈整理，汇集软件学院本科阶段计算机体系结构学习与嵌入式开发相关的公开课、书籍、Blog 和资料。")
 - [Learning-In-UESTC：软院学习资料](https://github.com/Fux-i/Learning-In-UESTC#card "由 23 级软院 Fuxi 学长主导创建，包含教材、课后答案、实验报告、课程代码和历年真题等资料。")
