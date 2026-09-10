@@ -77,11 +77,7 @@ export function HomeHero() {
         </div>
 
         <div className="studio-hero-emblem" aria-hidden="true">
-          <div className="studio-hero-chip-label">EMBEDDED SYSTEM / 01</div>
           <div className="studio-hero-logo" />
-          <div className="studio-hero-chip-status">
-            <span /> SYSTEM ONLINE
-          </div>
         </div>
       </div>
 

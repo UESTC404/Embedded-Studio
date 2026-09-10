@@ -361,7 +361,7 @@ body > * {
 
 .studio-home-hero h1 {
   margin: 0;
-  color: var(--color-fd-foreground);
+  color: var(--studio-blue-900);
   font-size: clamp(2.45rem, 4vw, 3.2rem);
   font-weight: 760;
   letter-spacing: -0.055em;
@@ -372,9 +372,7 @@ body > * {
 .studio-home-hero h1 > span {
   display: block;
   margin-top: 0.62rem;
-  background: linear-gradient(90deg, var(--studio-blue-900), var(--studio-blue-500) 72%, #47c7dc);
-  background-clip: text;
-  color: transparent;
+  color: inherit;
   font-family: 'Avenir Next', Avenir, 'DIN Alternate', var(--studio-font);
   font-size: 0.48em;
   font-weight: 650;
@@ -383,7 +381,11 @@ body > * {
 }
 
 .dark .studio-home-hero h1 > span {
-  background-image: linear-gradient(90deg, var(--studio-blue-300), #62d8eb);
+  color: inherit;
+}
+
+.dark .studio-home-hero h1 {
+  color: var(--studio-blue-100);
 }
 
 .studio-hero-motto {
@@ -398,12 +400,14 @@ body > * {
 
 .studio-hero-motto strong {
   color: color-mix(in srgb, var(--color-fd-foreground), transparent 6%);
-  font-size: 1.08rem;
+  font-size: 1rem;
+  font-weight: 600;
   letter-spacing: 0.05em;
 }
 
 .studio-hero-motto span {
   font-family: 'Avenir Next', Avenir, 'DIN Alternate', var(--studio-font);
+  font-weight: 600;
   letter-spacing: 0.045em;
 }
 
@@ -478,45 +482,14 @@ body > * {
   background: rgb(6 31 43 / 68%);
 }
 
-.studio-hero-chip-label,
-.studio-hero-chip-status {
-  position: absolute;
-  z-index: 2;
-  color: var(--studio-blue-700);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.57rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-}
-
-.studio-hero-chip-label {
-  top: 0.85rem;
-  left: 1rem;
-}
-
-.studio-hero-chip-status {
-  right: 1rem;
-  bottom: 0.85rem;
-}
-
-.studio-hero-chip-status > span {
-  display: inline-block;
-  width: 0.38rem;
-  height: 0.38rem;
-  margin-right: 0.32rem;
-  border-radius: 50%;
-  background: #12b981;
-  box-shadow: 0 0 7px #12b981;
-  animation: studio-status-blink 2.3s ease-in-out infinite;
-}
-
 .studio-hero-logo {
-  height: 15rem;
+  width: 100%;
+  aspect-ratio: 1.58;
   border-radius: 0.65rem;
   background-image: var(--studio-watermark-image);
-  background-position: 50% 0;
+  background-position: 50% 13%;
   background-repeat: no-repeat;
-  background-size: 260% auto;
+  background-size: 232% auto;
   mix-blend-mode: multiply;
   opacity: 0.76;
 }
@@ -1233,16 +1206,6 @@ body > * {
   }
 }
 
-@keyframes studio-status-blink {
-  0%,
-  100% {
-    opacity: 0.45;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
 @media (max-width: 768px) {
   :root {
     --fd-sidebar-width: 282px;
@@ -1272,11 +1235,6 @@ body > * {
 
   .studio-hero-emblem {
     transform: none;
-  }
-
-  .studio-hero-logo {
-    height: 11.5rem;
-    background-size: 235% auto;
   }
 
   .studio-hero-highlights {
