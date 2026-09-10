@@ -7,6 +7,7 @@ import {
   DocsTitle,
 } from 'fumadocs-ui/layouts/docs/page';
 import { Comments } from '@/components/comments';
+import { HomeHero } from '@/components/home-hero';
 import { getMDXComponents } from '@/components/mdx';
 import { source } from '@/lib/source';
 
@@ -21,17 +22,22 @@ export default async function Page({ params }: PageProps) {
   if (!page) notFound();
 
   const MDX = page.data.body;
+  const isHomePage = slug.length === 0;
 
   return (
     <DocsPage
       toc={page.data.toc}
       breadcrumb={{ enabled: false }}
-      className="studio-doc-page"
+      className={`studio-doc-page${isHomePage ? ' studio-home-page' : ''}`}
     >
-      <header className="studio-doc-header">
-        <DocsTitle>{page.data.title}</DocsTitle>
-        <DocsDescription>{page.data.description}</DocsDescription>
-      </header>
+      {isHomePage ? (
+        <HomeHero />
+      ) : (
+        <header className="studio-doc-header">
+          <DocsTitle>{page.data.title}</DocsTitle>
+          <DocsDescription>{page.data.description}</DocsDescription>
+        </header>
+      )}
       <DocsBody className="studio-content">
         <MDX components={getMDXComponents()} />
       </DocsBody>

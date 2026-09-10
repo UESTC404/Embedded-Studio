@@ -77,7 +77,11 @@ body {
   position: relative;
   isolation: isolate;
   min-height: 100vh;
-  background: var(--color-fd-background);
+  background-color: var(--color-fd-background);
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--studio-blue-300), transparent 94%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--studio-blue-300), transparent 94%) 1px, transparent 1px);
+  background-size: 40px 40px;
   color: var(--studio-ink);
   font-size: 16px;
   font-synthesis: none;
@@ -95,6 +99,19 @@ body::before {
   filter: saturate(0.75);
   opacity: 0.035;
   pointer-events: none;
+}
+
+body::after {
+  position: fixed;
+  z-index: 0;
+  inset: -18%;
+  background:
+    radial-gradient(circle at 22% 28%, color-mix(in srgb, var(--studio-blue-300), transparent 82%), transparent 24%),
+    radial-gradient(circle at 78% 66%, color-mix(in srgb, var(--studio-blue-500), transparent 90%), transparent 28%);
+  content: '';
+  opacity: 0.72;
+  pointer-events: none;
+  animation: studio-ambient-drift 18s ease-in-out infinite alternate;
 }
 
 body > * {
@@ -149,6 +166,17 @@ body > * {
   --fd-docs-page-width: 840px;
 }
 
+.studio-home-page {
+  --fd-docs-page-width: 1040px;
+}
+
+.studio-home-page .studio-content,
+.studio-home-page .studio-comments,
+.studio-home-page > nav {
+  width: min(100%, 840px);
+  margin-inline: auto;
+}
+
 .studio-doc-header {
   margin-bottom: 1.25rem;
   padding-bottom: 1.1rem;
@@ -164,6 +192,369 @@ body > * {
   margin-top: 0.35rem;
   font-size: 1.05rem;
   line-height: 1.55;
+}
+
+.studio-home-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 33rem;
+  overflow: hidden;
+  margin-bottom: 3.25rem;
+  padding: clamp(1.5rem, 4vw, 3.4rem);
+  border: 1px solid color-mix(in srgb, var(--studio-blue-300), transparent 34%);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, #ffffff, transparent 3%), color-mix(in srgb, var(--studio-blue-50), transparent 6%));
+  box-shadow:
+    0 22px 55px color-mix(in srgb, var(--studio-blue-900), transparent 90%),
+    inset 0 1px 0 rgb(255 255 255 / 78%);
+}
+
+.dark .studio-home-hero {
+  border-color: color-mix(in srgb, var(--studio-blue-300), transparent 64%);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, #07151c, transparent 1%), color-mix(in srgb, #0d2b3a, transparent 8%));
+  box-shadow:
+    0 24px 70px rgb(0 0 0 / 32%),
+    inset 0 1px 0 rgb(255 255 255 / 6%);
+}
+
+.studio-home-hero::before,
+.studio-home-hero::after {
+  position: absolute;
+  z-index: 2;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-color: color-mix(in srgb, var(--studio-blue-500), transparent 24%);
+  content: '';
+  pointer-events: none;
+}
+
+.studio-home-hero::before {
+  top: 0.8rem;
+  left: 0.8rem;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  border-radius: 0.7rem 0 0;
+}
+
+.studio-home-hero::after {
+  right: 0.8rem;
+  bottom: 0.8rem;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  border-radius: 0 0 0.7rem;
+}
+
+.studio-hero-glow {
+  position: absolute;
+  z-index: -1;
+  top: -10rem;
+  right: -7rem;
+  width: 31rem;
+  height: 31rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--studio-blue-300), transparent 52%), transparent 68%);
+  filter: blur(8px);
+  animation: studio-hero-glow 9s ease-in-out infinite alternate;
+}
+
+.studio-hero-circuit {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--studio-blue-500);
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.studio-hero-traces,
+.studio-hero-signals {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.studio-hero-traces {
+  stroke: currentColor;
+  stroke-width: 1;
+  opacity: 0.24;
+}
+
+.studio-hero-signals {
+  stroke: url(#studio-trace-gradient);
+  stroke-width: 2.2;
+  stroke-dasharray: 22 210;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--studio-blue-500), transparent 18%));
+  animation: studio-trace-flow 7s linear infinite;
+}
+
+.studio-hero-signals path:nth-child(2) {
+  animation-delay: -1.6s;
+}
+
+.studio-hero-signals path:nth-child(3) {
+  animation-delay: -3.2s;
+}
+
+.studio-hero-signals path:nth-child(4) {
+  animation-delay: -4.8s;
+}
+
+.studio-hero-nodes {
+  fill: var(--studio-blue-500);
+}
+
+.studio-hero-nodes circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  filter: drop-shadow(0 0 5px var(--studio-blue-300));
+  animation: studio-node-pulse 2.8s ease-in-out infinite;
+}
+
+.studio-hero-nodes circle:nth-child(2) {
+  animation-delay: -0.7s;
+}
+
+.studio-hero-nodes circle:nth-child(3) {
+  animation-delay: -1.4s;
+}
+
+.studio-hero-nodes circle:nth-child(4) {
+  animation-delay: -2.1s;
+}
+
+.studio-hero-main {
+  display: grid;
+  min-height: 22rem;
+  align-items: center;
+  grid-template-columns: minmax(0, 1.12fr) minmax(17rem, 0.88fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.studio-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.studio-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1.1rem;
+  color: var(--studio-blue-700);
+  font-family: 'Avenir Next', Avenir, 'DIN Alternate', var(--studio-font);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.studio-hero-eyebrow > span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--studio-blue-500);
+  box-shadow: 0 0 0 0.3rem color-mix(in srgb, var(--studio-blue-300), transparent 78%);
+}
+
+.studio-home-hero h1 {
+  margin: 0;
+  color: var(--color-fd-foreground);
+  font-size: clamp(2.45rem, 4vw, 3.2rem);
+  font-weight: 760;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
+  white-space: nowrap;
+}
+
+.studio-home-hero h1 > span {
+  display: block;
+  margin-top: 0.62rem;
+  background: linear-gradient(90deg, var(--studio-blue-900), var(--studio-blue-500) 72%, #47c7dc);
+  background-clip: text;
+  color: transparent;
+  font-family: 'Avenir Next', Avenir, 'DIN Alternate', var(--studio-font);
+  font-size: 0.48em;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+}
+
+.dark .studio-home-hero h1 > span {
+  background-image: linear-gradient(90deg, var(--studio-blue-300), #62d8eb);
+}
+
+.studio-hero-motto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  margin: 1.45rem 0 0;
+  color: var(--color-fd-muted-foreground);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.studio-hero-motto strong {
+  color: color-mix(in srgb, var(--color-fd-foreground), transparent 6%);
+  font-size: 1.08rem;
+  letter-spacing: 0.05em;
+}
+
+.studio-hero-motto span {
+  font-family: 'Avenir Next', Avenir, 'DIN Alternate', var(--studio-font);
+  letter-spacing: 0.045em;
+}
+
+.studio-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.8rem;
+}
+
+.studio-hero-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--studio-blue-500), transparent 55%);
+  border-radius: 0.7rem;
+  background: color-mix(in srgb, var(--color-fd-background), transparent 26%);
+  color: var(--color-fd-foreground);
+  font-size: 0.88rem;
+  font-weight: 650;
+  text-decoration: none;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 56%);
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-hero-button:hover {
+  border-color: var(--studio-blue-500);
+  color: var(--color-fd-foreground);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--studio-blue-700), transparent 86%);
+  transform: translateY(-2px);
+}
+
+.studio-hero-button--primary {
+  border-color: transparent;
+  background: linear-gradient(110deg, var(--studio-blue-900), var(--studio-blue-500));
+  color: #ffffff;
+  box-shadow: 0 9px 24px color-mix(in srgb, var(--studio-blue-700), transparent 68%);
+}
+
+.studio-hero-button--primary:hover {
+  color: #ffffff;
+}
+
+.studio-hero-button svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.studio-hero-emblem {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0.8rem;
+  border: 1px solid color-mix(in srgb, var(--studio-blue-300), transparent 44%);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--studio-blue-50), transparent 38%);
+  box-shadow:
+    0 18px 40px color-mix(in srgb, var(--studio-blue-900), transparent 88%),
+    inset 0 0 24px color-mix(in srgb, var(--studio-blue-300), transparent 84%);
+  transform: perspective(900px) rotateY(-5deg) rotateX(2deg);
+}
+
+.dark .studio-hero-emblem {
+  background: rgb(6 31 43 / 68%);
+}
+
+.studio-hero-chip-label,
+.studio-hero-chip-status {
+  position: absolute;
+  z-index: 2;
+  color: var(--studio-blue-700);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.studio-hero-chip-label {
+  top: 0.85rem;
+  left: 1rem;
+}
+
+.studio-hero-chip-status {
+  right: 1rem;
+  bottom: 0.85rem;
+}
+
+.studio-hero-chip-status > span {
+  display: inline-block;
+  width: 0.38rem;
+  height: 0.38rem;
+  margin-right: 0.32rem;
+  border-radius: 50%;
+  background: #12b981;
+  box-shadow: 0 0 7px #12b981;
+  animation: studio-status-blink 2.3s ease-in-out infinite;
+}
+
+.studio-hero-logo {
+  height: 15rem;
+  border-radius: 0.65rem;
+  background-image: var(--studio-watermark-image);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: 260% auto;
+  mix-blend-mode: multiply;
+  opacity: 0.76;
+}
+
+.dark .studio-hero-logo {
+  filter: invert(1) hue-rotate(180deg) saturate(1.45);
+  mix-blend-mode: screen;
+  opacity: 0.58;
+}
+
+.studio-hero-highlights {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.05rem;
+  margin: 1.15rem 0 0;
+  padding: 1.15rem 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--studio-blue-300), transparent 58%);
+  list-style: none;
+}
+
+.studio-hero-highlights li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  color: color-mix(in srgb, var(--color-fd-foreground), transparent 23%);
+  font-size: 0.76rem;
+  font-weight: 620;
+  white-space: nowrap;
+}
+
+.studio-hero-highlights li > span {
+  width: 0.27rem;
+  height: 0.27rem;
+  border-radius: 1px;
+  background: var(--studio-blue-500);
+  box-shadow: 0 0 5px color-mix(in srgb, var(--studio-blue-500), transparent 22%);
 }
 
 .studio-content {
@@ -804,6 +1195,54 @@ body > * {
   margin: 2.25rem 0;
 }
 
+@keyframes studio-ambient-drift {
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5%, 1%, 0) scale(1.035);
+  }
+}
+
+@keyframes studio-hero-glow {
+  from {
+    opacity: 0.62;
+    transform: translate3d(-2%, -1%, 0) scale(0.94);
+  }
+  to {
+    opacity: 0.92;
+    transform: translate3d(4%, 3%, 0) scale(1.08);
+  }
+}
+
+@keyframes studio-trace-flow {
+  to {
+    stroke-dashoffset: -232;
+  }
+}
+
+@keyframes studio-node-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.72);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes studio-status-blink {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --fd-sidebar-width: 282px;
@@ -812,6 +1251,42 @@ body > * {
   .studio-doc-header {
     margin-bottom: 1rem;
     padding-bottom: 0.9rem;
+  }
+
+  .studio-home-hero {
+    min-height: 0;
+    margin-bottom: 2.35rem;
+    padding: 1.7rem 1.25rem 1.3rem;
+    border-radius: 1rem;
+  }
+
+  .studio-hero-main {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.65rem;
+  }
+
+  .studio-home-hero h1 {
+    font-size: clamp(2.25rem, 10.5vw, 3rem);
+  }
+
+  .studio-hero-emblem {
+    transform: none;
+  }
+
+  .studio-hero-logo {
+    height: 11.5rem;
+    background-size: 235% auto;
+  }
+
+  .studio-hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem 0.85rem;
+  }
+
+  .studio-hero-highlights li {
+    white-space: normal;
   }
 
   .studio-content {
@@ -860,6 +1335,15 @@ body > * {
 }
 
 @media (max-width: 520px) {
+  .studio-hero-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .studio-hero-highlights {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .studio-image--left,
   .studio-image--right {
     margin-inline: auto;
@@ -874,6 +1358,8 @@ body > * {
   *,
   *::before,
   *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
