@@ -5,6 +5,7 @@
 @import 'fumadocs-ui/css/generated/docs.css';
 @import 'fumadocs-ui/css/generated/shared.css';
 @import 'fumadocs-ui/css/lib/default-colors.css';
+@import './fonts/noto-serif-sc/index.css';
 
 @plugin '../node_modules/fumadocs-ui/dist/tailwind/typography.js';
 
@@ -19,8 +20,13 @@
   --studio-blue-50: #f3fafe;
   --studio-blue-25: #f8fcfe;
   --studio-border: #d9e8ef;
-  --studio-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'PingFang SC',
+  --studio-font-sans: 'Gill Sans', 'Gill Sans MT', Calibri, 'PingFang SC',
     'Microsoft YaHei', sans-serif;
+  --studio-font-serif: 'Noto Serif SC Variable', 'Source Han Serif SC',
+    'Songti SC', 'Times New Roman', serif;
+  --studio-font: var(--studio-font-sans);
+  --font-sans: var(--studio-font);
+  --default-font-family: var(--studio-font);
   --color-fd-primary: var(--studio-blue-700);
   --color-fd-primary-foreground: #ffffff;
   --color-fd-background: var(--studio-blue-25);
@@ -33,6 +39,10 @@
   --fd-layout-width: 1480px;
   --fd-sidebar-width: 260px;
   --fd-toc-width: 220px;
+}
+
+html[data-studio-font='serif'] {
+  --studio-font: var(--studio-font-serif);
 }
 
 .dark {
@@ -78,10 +88,6 @@ body {
   isolation: isolate;
   min-height: 100vh;
   background-color: var(--color-fd-background);
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--studio-blue-300), transparent 94%) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--studio-blue-300), transparent 94%) 1px, transparent 1px);
-  background-size: 40px 40px;
   color: var(--studio-ink);
   font-size: 16px;
   font-synthesis: none;
@@ -117,6 +123,53 @@ body::after {
 body > * {
   position: relative;
   z-index: 1;
+}
+
+.studio-font-switcher {
+  display: grid;
+  width: 1.65rem;
+  height: 1.65rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: var(--color-fd-muted-foreground);
+  font-family: var(--studio-font);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.studio-font-switcher:hover {
+  background: color-mix(in srgb, var(--color-fd-accent), transparent 22%);
+  color: var(--color-fd-accent-foreground);
+}
+
+.studio-font-switcher[aria-pressed='true'] {
+  background: var(--color-fd-accent);
+  color: var(--color-fd-accent-foreground);
+  font-family: 'Noto Serif SC Variable', 'Songti SC', serif;
+}
+
+.studio-font-switcher:focus-visible {
+  outline: 2px solid var(--studio-blue-500);
+  outline-offset: 2px;
+}
+
+.studio-sidebar-appearance {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+}
+
+.studio-sidebar-appearance .studio-theme-switch {
+  margin-inline-start: 0.08rem;
 }
 
 .studio-brand {
@@ -345,7 +398,7 @@ body > * {
   gap: 0.55rem;
   margin: 0 0 1.1rem;
   color: var(--studio-blue-700);
-  font-family: 'Avenir Next', Avenir, 'DIN Alternate', var(--studio-font);
+  font-family: var(--studio-font);
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -373,7 +426,7 @@ body > * {
   display: block;
   margin-top: 0.62rem;
   color: inherit;
-  font-family: 'Avenir Next', Avenir, 'DIN Alternate', var(--studio-font);
+  font-family: var(--studio-font);
   font-size: 0.48em;
   font-weight: 650;
   letter-spacing: -0.035em;
@@ -406,7 +459,7 @@ body > * {
 }
 
 .studio-hero-motto span {
-  font-family: 'Avenir Next', Avenir, 'DIN Alternate', var(--studio-font);
+  font-family: var(--studio-font);
   font-weight: 600;
   letter-spacing: 0.045em;
 }
@@ -583,8 +636,7 @@ body > * {
   border: 0;
   background: transparent;
   color: color-mix(in srgb, var(--color-fd-foreground), transparent 12%);
-  font-family: 'Gill Sans MT', 'Gill Sans', 'PingFang SC', 'Microsoft YaHei',
-    sans-serif;
+  font-family: var(--studio-font);
   font-size: 0.96rem;
   font-style: normal;
   letter-spacing: 0.012em;

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import Image from 'next/image';
+import { SidebarAppearanceControls } from '@/components/font-switcher';
 import { ImageLightbox } from '@/components/image-lightbox';
 import { StaticNavigation } from '@/components/static-navigation';
 import { source } from '@/lib/source';
@@ -15,6 +16,7 @@ export default function DocsRootLayout({ children }: { children: ReactNode }) {
         tree={source.getPageTree()}
         githubUrl="https://github.com/UESTC404/Embedded-Studio"
         themeSwitch={{ mode: 'light-dark' }}
+        slots={{ themeSwitch: SidebarAppearanceControls }}
         nav={{
           title: (
             <span className="studio-brand">

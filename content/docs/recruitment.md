@@ -30,13 +30,12 @@ description: 2019级至今所有的招新马拉松真题～
 
 ## 2024级暑期招新
 
-共 5 份资料。
+共 4 份资料。
 
 - [嵌入式工作室23级暑期招新- Robotic.pdf](/files/recruitment/2024%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%B7%A5%E4%BD%9C%E5%AE%A423%E7%BA%A7%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0-%20Robotic.pdf "1.13 MiB · PDF")
 - [嵌入式工作室23级暑期招新-computer architecture.pdf](/files/recruitment/2024%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%B7%A5%E4%BD%9C%E5%AE%A423%E7%BA%A7%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0-computer%20architecture.pdf "1.17 MiB · PDF")
 - [嵌入式工作室23级暑期招新-edge AI .pdf](/files/recruitment/2024%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%B7%A5%E4%BD%9C%E5%AE%A423%E7%BA%A7%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0-edge%20AI%20.pdf "877 KiB · PDF")
 - [嵌入式工作室23级暑期招新-IOT.pdf](/files/recruitment/2024%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%B7%A5%E4%BD%9C%E5%AE%A423%E7%BA%A7%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0-IOT.pdf "442 KiB · PDF")
-- [四轴飞行器.mp4](/files/recruitment/2024%E6%9A%91%E6%9C%9F%E6%8B%9B%E6%96%B0/%E5%9B%9B%E8%BD%B4%E9%A3%9E%E8%A1%8C%E5%99%A8.mp4 "66.97 MiB · MP4")
 
 ## 2024级招新马拉松
 
