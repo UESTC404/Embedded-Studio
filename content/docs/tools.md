@@ -3,8 +3,6 @@ id: 5ae9c1ac-3180-41a2-b883-d130e4d840a3
 title: 🧰 奇奇怪怪的工具箱
 description: 该板块用于提供工作室部分硬件的使用指南和网络中一些奇奇怪怪但有用的工具
 ---
-放入该板块的网络资源内容需保证**可用性强，安全可靠**
-
 > 放入该板块的网络资源内容需保证**可用性强，安全可靠**,
 >
 > 相信你一定在会一些奇怪的地方用到它
@@ -20,6 +18,33 @@ description: 该板块用于提供工作室部分硬件的使用指南和网络�
 [Kobra Neo 3D 打印机使用手册](/files/manual-kobra-neo.pdf "10.61 MiB · PDF 使用手册")
 
 ### 打印机
+
+## AI 相关
+
+### AI 前沿动向
+
+- [alphaXiv](https://www.alphaxiv.org/)：优秀的论文追新网站，可以发现热门论文、研究者与前沿方向。
+- [AIHOT](https://aihot.news/all)：全面的 AI 动态新闻，适合快速了解近期模型、产品与行业进展。
+
+### AI 聊天工具
+
+- [ChatGPT](https://chatgpt.com/)：OpenAI 官方聊天工具。
+- [DeepSeek](https://chat.deepseek.com/)：深度求索官方聊天工具。
+- [GLM（Z.ai）](https://z.ai/chat)：智谱 GLM 系列模型的官方聊天入口。
+- [Claude](https://claude.ai/)：Anthropic 官方聊天工具。
+- [Grok](https://grok.com/)：xAI 官方聊天工具。
+- [Kimi](https://www.kimi.com/)：月之暗面官方聊天工具。
+- [Gemini](https://gemini.google.com/)：Google 官方聊天工具。
+
+### Agent 工具
+
+- [Codex](https://openai.com/codex/)：OpenAI 推出的编程 Agent，可理解代码库并完成开发、修改与验证任务。
+- [ZCode](https://zcode.z.ai/)：围绕 GLM 模型构建的 Agent 开发环境，支持规划、编辑代码、运行命令与验证结果。
+- [Qoder](https://qoder.com/)：面向真实软件开发的 Agent 平台，支持代码编辑、终端操作与长任务执行。
+- [Claude Code](https://claude.com/product/claude-code)：Anthropic 推出的编程 Agent，可在终端中理解和修改整个代码库。
+- [Cursor](https://www.cursor.com/)：集成代码理解、编辑与 Agent 能力的 AI 代码编辑器。
+- [GitHub Copilot](https://github.com/features/copilot)：集成于 IDE 和 GitHub 工作流中的 AI 编程助手与 Agent。
+- [Gemini CLI](https://github.com/google-gemini/gemini-cli)：Google 开源的终端 Agent，可用于理解代码、调用工具和完成开发任务。
 
 ## 网络资源
 
