@@ -9,6 +9,7 @@ import {
 import { Comments } from '@/components/comments';
 import { HomeHero } from '@/components/home-hero';
 import { getMDXComponents } from '@/components/mdx';
+import { VisitorCounter } from '@/components/visitor-counter';
 import { source } from '@/lib/source';
 
 interface PageProps {
@@ -28,6 +29,7 @@ export default async function Page({ params }: PageProps) {
     <DocsPage
       toc={page.data.toc}
       breadcrumb={{ enabled: false }}
+      footer={{ children: <VisitorCounter /> }}
       className={`studio-doc-page${isHomePage ? ' studio-home-page' : ''}`}
     >
       {isHomePage ? (

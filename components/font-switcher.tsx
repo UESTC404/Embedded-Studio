@@ -5,7 +5,6 @@ import {
   ThemeSwitch,
   type ThemeSwitchProps,
 } from 'fumadocs-ui/layouts/shared/slots/theme-switch';
-import { VisitorCounter } from '@/components/visitor-counter';
 
 type FontMode = 'sans' | 'serif';
 
@@ -62,12 +61,9 @@ export function SidebarAppearanceControls({
   className,
 }: Pick<ThemeSwitchProps, 'className'>) {
   return (
-    <div className={`studio-sidebar-footer-tools ${className ?? ''}`}>
-      <VisitorCounter />
-      <div className="studio-sidebar-appearance">
-        <FontSwitcher />
-        <ThemeSwitch mode="light-dark" className="studio-theme-switch" />
-      </div>
+    <div className={`studio-sidebar-appearance ${className ?? ''}`}>
+      <FontSwitcher />
+      <ThemeSwitch mode="light-dark" className="studio-theme-switch" />
     </div>
   );
 }
