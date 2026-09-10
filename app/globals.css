@@ -510,6 +510,16 @@ body > * {
   white-space: nowrap;
 }
 
+html[data-studio-font='serif'] .studio-home-hero h1 {
+  letter-spacing: 0.012em;
+  line-height: 1.08;
+}
+
+html[data-studio-font='serif'] .studio-home-hero h1 > span {
+  margin-top: 0.72rem;
+  letter-spacing: 0.005em;
+}
+
 .dark .studio-home-hero h1 > span {
   color: inherit;
 }
