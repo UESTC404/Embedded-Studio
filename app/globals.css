@@ -406,6 +406,93 @@ body > * {
   height: 1rem;
 }
 
+.studio-content ul:has(> li > .studio-resource-card) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.studio-content li:has(> .studio-resource-card) {
+  min-width: 0;
+  margin: 0;
+}
+
+.studio-content .studio-resource-card {
+  display: flex;
+  min-height: 8rem;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.9rem;
+  border: 1px solid var(--color-fd-border);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--studio-blue-50), transparent 12%);
+  color: var(--color-fd-foreground);
+  text-decoration: none;
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--studio-blue-900), transparent 95%);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.studio-content .studio-resource-card:hover {
+  border-color: var(--studio-blue-300);
+  color: var(--color-fd-foreground);
+  box-shadow: 0 5px 16px color-mix(in srgb, var(--studio-blue-900), transparent 90%);
+  transform: translateY(-1px);
+}
+
+.dark .studio-content .studio-resource-card {
+  background: color-mix(in srgb, var(--color-fd-card), transparent 5%);
+}
+
+.studio-resource-card-content {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.studio-resource-card-content strong {
+  color: var(--color-fd-foreground);
+  font-size: 0.96rem;
+  line-height: 1.35;
+}
+
+.studio-resource-card-content > span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--color-fd-muted-foreground);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.studio-resource-card-content small {
+  margin-top: auto;
+  color: var(--studio-blue-700);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.dark .studio-resource-card-content small {
+  color: var(--studio-blue-300);
+}
+
+.studio-resource-card > svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  color: var(--color-fd-muted-foreground);
+}
+
 .studio-pdf-viewer {
   display: block;
   width: 100%;
@@ -747,6 +834,10 @@ body > * {
   }
 
   .studio-content ul:has(> li > .studio-file-card) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .studio-content ul:has(> li > .studio-resource-card) {
     grid-template-columns: minmax(0, 1fr);
   }
 

@@ -98,3 +98,15 @@ QQ🐧招新群号: 1061735845
 ![工作室环境：项目实践](/images/studio-room-03.png)
 
 ![工作室环境：公共学习区](/images/studio-room-04.png)
+
+## 推荐资源
+
+下面这些项目与课程涵盖软院学习、嵌入式开发、计算机基础和升学准备，适合根据自己的目标按需查阅。
+
+- [awesome-es：嵌入式与体系结构学习资源](https://github.com/UESTC404/awesome-es#card "由工作室前辈整理，汇集软件学院本科阶段计算机体系结构学习与嵌入式开发相关的公开课、书籍、Blog 和资料。")
+- [Learning-In-UESTC：软院学习资料](https://github.com/Fux-i/Learning-In-UESTC#card "由 23 级软院 Fuxi 学长主导创建，包含教材、课后答案、实验报告、课程代码和历年真题等资料。")
+- [UESTC Byte Lib：期末复习指引](https://my.feishu.cn/wiki/AatBwiDa7ig7RJkzdlocLm1cnTh#card "面向电子科技大学同学整理的期末复习指引，适合在备考阶段快速查找课程复习资料。")
+- [CSPostgraduate-408：计算机考研资料](https://github.com/CodePanda66/CSPostgraduate-408#card "计算机考研 408 专业课资料库，收录真题、笔记、思维导图以及部分算法源码。")
+- [计算机教育中缺失的一课](https://missing-semester-cn.github.io/#card "MIT The Missing Semester 中文版，介绍 Shell、Git、编辑器、调试、性能分析等课堂中容易被忽略的实用工具。")
+- [CS 自学指南](https://csdiy.wiki/#card "汇集世界一流大学的优质计算机课程，为不同基础和方向的同学提供系统化的自学路径。")
+- [上海交通大学生存手册](https://survivesjtu.gitbook.io/survivesjtumanual/li-zhi-pian/huan-ying-lai-dao-shang-hai-jiao-tong-da-xue#card "从自主规划与个人成长的角度讨论大学学习，提醒读者主动选择自己的道路。")

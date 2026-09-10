@@ -3,6 +3,7 @@ import {
   Archive,
   Download,
   Eye,
+  ExternalLink,
   FileCode2,
   FileImage,
   FileText,
@@ -142,6 +143,43 @@ function isManagedFile(source: string): boolean {
   return source.startsWith('/files/') || isPdf(source);
 }
 
+function getLinkHost(source: string): string {
+  try {
+    return new URL(source).hostname.replace(/^www\./, '');
+  } catch {
+    return '站内资源';
+  }
+}
+
+function ResourceCard({
+  source,
+  label,
+  detail,
+}: {
+  source: string;
+  label: ReactNode;
+  detail?: string;
+}) {
+  const publicSource = withBasePath(source);
+  const external = /^https?:\/\//i.test(source);
+
+  return (
+    <a
+      className="studio-resource-card"
+      href={publicSource}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noreferrer' : undefined}
+    >
+      <span className="studio-resource-card-content">
+        <strong>{label}</strong>
+        {detail && <span>{detail}</span>}
+        <small>{getLinkHost(source)}</small>
+      </span>
+      <ExternalLink aria-hidden="true" />
+    </a>
+  );
+}
+
 function FileCard({
   source,
   label,
@@ -229,6 +267,11 @@ function StudioLink({
 }: ComponentProps<'a'>) {
   const { source, mode } = splitFileMode(href);
   const publicSource = withBasePath(source);
+  const resourceCard = /#card$/i.test(href) && !isManagedFile(source);
+
+  if (resourceCard) {
+    return <ResourceCard source={source} label={children} detail={title} />;
+  }
 
   if (!isManagedFile(source) || mode === 'link') {
     return (
