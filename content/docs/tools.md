@@ -7,18 +7,6 @@ description: 该板块用于提供工作室部分硬件的使用指南和网络�
 >
 > 相信你一定在会一些奇怪的地方用到它
 
-## 工作室硬件资源
-
-### 电烙铁
-
-- 请阅读：[安全规则怪谈](https://es-stdio-uestc.feishu.cn/wiki/A4u9wj9eii2c8kk1nH1cmgiWnbc)
-
-### 3D打印机
-
-[Kobra Neo 3D 打印机使用手册](/files/manual-kobra-neo.pdf "10.61 MiB · PDF 使用手册")
-
-### 打印机
-
 ## AI 相关
 
 ### AI 前沿动向
@@ -45,6 +33,18 @@ description: 该板块用于提供工作室部分硬件的使用指南和网络�
 - [Cursor](https://www.cursor.com/)：集成代码理解、编辑与 Agent 能力的 AI 代码编辑器。
 - [GitHub Copilot](https://github.com/features/copilot)：集成于 IDE 和 GitHub 工作流中的 AI 编程助手与 Agent。
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli)：Google 开源的终端 Agent，可用于理解代码、调用工具和完成开发任务。
+
+## 工作室硬件资源
+
+### 电烙铁
+
+- 请阅读：[安全规则怪谈](https://es-stdio-uestc.feishu.cn/wiki/A4u9wj9eii2c8kk1nH1cmgiWnbc)
+
+### 3D打印机
+
+[Kobra Neo 3D 打印机使用手册](/files/manual-kobra-neo.pdf "10.61 MiB · PDF 使用手册")
+
+### 打印机
 
 ## 网络资源
 
