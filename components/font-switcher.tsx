@@ -12,9 +12,9 @@ const storageKey = 'studio-font-mode';
 const changeEvent = 'studio-font-change';
 
 function getFontMode(): FontMode {
-  return document.documentElement.dataset.studioFont === 'serif'
-    ? 'serif'
-    : 'sans';
+  return document.documentElement.dataset.studioFont === 'sans'
+    ? 'sans'
+    : 'serif';
 }
 
 function subscribe(callback: () => void) {
@@ -40,7 +40,7 @@ function applyFont(mode: FontMode) {
 }
 
 export function FontSwitcher() {
-  const mode = useSyncExternalStore(subscribe, getFontMode, () => 'sans');
+  const mode = useSyncExternalStore(subscribe, getFontMode, () => 'serif');
   const nextMode: FontMode = mode === 'sans' ? 'serif' : 'sans';
 
   return (

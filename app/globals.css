@@ -24,7 +24,7 @@
     'Microsoft YaHei', sans-serif;
   --studio-font-serif: 'Noto Serif SC Variable', 'Source Han Serif SC',
     'Songti SC', 'Times New Roman', serif;
-  --studio-font: var(--studio-font-sans);
+  --studio-font: var(--studio-font-serif);
   --font-sans: var(--studio-font);
   --default-font-family: var(--studio-font);
   --color-fd-primary: var(--studio-blue-700);
@@ -43,6 +43,10 @@
 
 html[data-studio-font='serif'] {
   --studio-font: var(--studio-font-serif);
+}
+
+html[data-studio-font='sans'] {
+  --studio-font: var(--studio-font-sans);
 }
 
 .dark {

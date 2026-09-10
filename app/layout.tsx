@@ -8,7 +8,7 @@ const socialPreviewUrl = `${siteUrl}/images/ES-logo.png`;
 const bodyStyle = {
   '--studio-watermark-image': `url("${withBasePath('/images/ES.png')}")`,
 } as CSSProperties;
-const fontPreferenceScript = `try{var fontMode=localStorage.getItem('studio-font-mode');document.documentElement.dataset.studioFont=fontMode==='serif'?'serif':'sans'}catch(e){document.documentElement.dataset.studioFont='sans'}`;
+const fontPreferenceScript = `try{var fontMode=localStorage.getItem('studio-font-mode');document.documentElement.dataset.studioFont=fontMode==='sans'?'sans':'serif'}catch(e){document.documentElement.dataset.studioFont='serif'}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteUrl}/`),
