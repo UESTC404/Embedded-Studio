@@ -50,6 +50,16 @@ export function HomeHero() {
         </g>
       </svg>
 
+      <a
+        className="studio-hero-corner-link"
+        href="https://github.com/UESTC404"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <GitFork aria-hidden="true" />
+        GitHub 大本营
+      </a>
+
       <div className="studio-hero-main">
         <div className="studio-hero-copy">
           <p className="studio-hero-eyebrow">
@@ -73,15 +83,6 @@ export function HomeHero() {
               <BookOpenText aria-hidden="true" />
               浏览往届招新题
             </Link>
-            <a
-              className="studio-hero-button"
-              href="https://github.com/UESTC404"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GitFork aria-hidden="true" />
-              GitHub 大本营
-            </a>
           </div>
         </div>
 
