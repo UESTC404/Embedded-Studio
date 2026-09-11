@@ -647,8 +647,8 @@ html[data-studio-font='serif'] .studio-home-hero h1 > span {
 .studio-hero-highlights {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
   gap: 0.6rem 1.05rem;
   margin: 1.15rem 0 0;
   padding: 1.15rem 0 0;
