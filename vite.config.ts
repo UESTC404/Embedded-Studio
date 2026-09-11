@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import { sites } from '@openai/sites-vite-plugin';
 import tailwindcss from '@tailwindcss/postcss';
 import { fumadocsMdx } from 'fumadocs-mdx/vite';
@@ -12,6 +13,19 @@ const { d1, r2 } = hostingConfig;
 
 // macOS Seatbelt blocks FSEvents, so Codex previews need polling for HMR.
 const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
+
+function getLastUpdatedDate() {
+  const configuredDate = process.env.SITE_LAST_UPDATED?.trim();
+  if (configuredDate) return configuredDate;
+
+  try {
+    return execFileSync('git', ['log', '-1', '--format=%cs'], {
+      encoding: 'utf8',
+    }).trim();
+  } catch {
+    return new Date().toISOString().slice(0, 10);
+  }
+}
 
 const localBindingConfig = {
   main: 'vinext/server/app-router-entry',
@@ -36,6 +50,8 @@ const localBindingConfig = {
 };
 
 export default defineConfig(async () => {
+  const lastUpdatedDate = getLastUpdatedDate();
+
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
   // settings; application environment belongs in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= 'false';
@@ -47,6 +63,9 @@ export default defineConfig(async () => {
 
   return {
     css: { postcss: { plugins: [tailwindcss()] } },
+    define: {
+      'process.env.SITE_LAST_UPDATED': JSON.stringify(lastUpdatedDate),
+    },
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,

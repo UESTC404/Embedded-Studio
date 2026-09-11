@@ -24,12 +24,13 @@ export default async function Page({ params }: PageProps) {
 
   const MDX = page.data.body;
   const isHomePage = slug.length === 0;
+  const lastUpdated = process.env.SITE_LAST_UPDATED || '—';
 
   return (
     <DocsPage
       toc={page.data.toc}
       breadcrumb={{ enabled: false }}
-      footer={{ children: <VisitorCounter /> }}
+      footer={{ children: <VisitorCounter lastUpdated={lastUpdated} /> }}
       className={`studio-doc-page${isHomePage ? ' studio-home-page' : ''}`}
     >
       {isHomePage ? (

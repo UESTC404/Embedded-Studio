@@ -253,6 +253,14 @@ body > * {
   opacity: 0.72;
 }
 
+.studio-visitor-updated {
+  flex: 0 0 auto;
+  color: var(--color-fd-muted-foreground);
+  font-size: 0.6rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 .studio-brand {
   display: inline-flex;
   align-items: center;

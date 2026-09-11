@@ -94,7 +94,7 @@ function formatCount(value: string | null) {
   return Number.isFinite(number) ? number.toLocaleString('en-US') : value;
 }
 
-export function VisitorCounter() {
+export function VisitorCounter({ lastUpdated }: { lastUpdated: string }) {
   const pathname = usePathname();
   const [counts, setCounts] = useState<VisitorCounts>({
     uv: null,
@@ -121,8 +121,8 @@ export function VisitorCounter() {
       className={`studio-visitor-footer${loaded ? ' is-loaded' : ''}`}
       aria-label={
         loaded
-          ? `全站累计访客 ${counts.uv}，全站累计访问量 ${counts.pv}，当前页面累计访问量 ${counts.pagePv}`
-          : '正在加载访客统计'
+          ? `全站累计访客 ${counts.uv}，全站累计访问量 ${counts.pv}，当前页面累计访问量 ${counts.pagePv}，最后更新日期 ${lastUpdated}`
+          : `正在加载访客统计，最后更新日期 ${lastUpdated}`
       }
     >
       <span className="studio-visitor-footer-title">
@@ -143,6 +143,9 @@ export function VisitorCounter() {
           <dd>{formatCount(counts.pagePv)}</dd>
         </div>
       </dl>
+      <time className="studio-visitor-updated" dateTime={lastUpdated}>
+        Last update: {lastUpdated}
+      </time>
       <span className="studio-visitor-provider">数据由不蒜子提供</span>
     </aside>
   );
