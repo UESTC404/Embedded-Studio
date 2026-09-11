@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpenText } from 'lucide-react';
+import { ArrowRight, BookOpenText, GitFork } from 'lucide-react';
 import Link from 'next/link';
 import { withBasePath } from '@/lib/site';
 
@@ -73,6 +73,15 @@ export function HomeHero() {
               <BookOpenText aria-hidden="true" />
               浏览往届招新题
             </Link>
+            <a
+              className="studio-hero-button"
+              href="https://github.com/UESTC404"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitFork aria-hidden="true" />
+              GitHub 大本营
+            </a>
           </div>
         </div>
 
