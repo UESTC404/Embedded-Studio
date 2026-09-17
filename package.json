@@ -10,6 +10,7 @@
     "dev": "npm run validate:content && node scripts/generate-navigation.mjs && vinext dev",
     "build": "npm run validate:content && node scripts/generate-navigation.mjs && vinext build",
     "build:pages": "npm run validate:content && node scripts/generate-navigation.mjs && vinext build && node scripts/prepare-pages.mjs",
+    "sync:resource-logos": "node scripts/sync-resource-logos.mjs",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },

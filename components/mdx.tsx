@@ -17,6 +17,7 @@ import {
   type ReactNode,
 } from 'react';
 import { withBasePath } from '@/lib/site';
+import resourceLogoManifest from '@/public/images/resource-logos/manifest.json';
 
 const DefaultLink = defaultMdxComponents.a;
 const DefaultImage = defaultMdxComponents.img;
@@ -151,6 +152,17 @@ function getLinkHost(source: string): string {
   }
 }
 
+function getResourceLogo(host: string): string | undefined {
+  const filename = (resourceLogoManifest as Record<string, string>)[host];
+  return filename
+    ? withBasePath(`/images/resource-logos/${filename}`)
+    : undefined;
+}
+
+function getResourceInitial(host: string): string {
+  return host.replace(/[^a-z0-9]/gi, '').slice(0, 1).toUpperCase() || '↗';
+}
+
 function ResourceCard({
   source,
   label,
@@ -162,6 +174,8 @@ function ResourceCard({
 }) {
   const publicSource = withBasePath(source);
   const external = /^https?:\/\//i.test(source);
+  const host = getLinkHost(source);
+  const logo = getResourceLogo(host);
 
   return (
     <a
@@ -171,11 +185,20 @@ function ResourceCard({
       rel={external ? 'noreferrer' : undefined}
     >
       <span className="studio-resource-card-content">
-        <strong>{label}</strong>
-        {detail && <span>{detail}</span>}
-        <small>{getLinkHost(source)}</small>
+        <span className="studio-resource-card-header">
+          <span
+            className={`studio-resource-logo${logo ? ' has-logo' : ''}`}
+            style={logo ? { backgroundImage: `url("${logo}")` } : undefined}
+            aria-hidden="true"
+          >
+            {!logo && <span>{getResourceInitial(host)}</span>}
+          </span>
+          <strong>{label}</strong>
+          <ExternalLink aria-hidden="true" />
+        </span>
+        {detail && <span className="studio-resource-card-detail">{detail}</span>}
+        <small>{host}</small>
       </span>
-      <ExternalLink aria-hidden="true" />
     </a>
   );
 }
