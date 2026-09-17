@@ -38,7 +38,7 @@ description: 该板块用于提供工作室部分硬件的使用指南和网络�
 
 ### 电烙铁
 
-- [安全规则怪谈](https://es-stdio-uestc.feishu.cn/wiki/A4u9wj9eii2c8kk1nH1cmgiWnbc#card "使用电烙铁及工作室硬件前请先阅读。")
+- [安全规则怪谈](https://uestc404.github.io/Embedded-Studio/safety#card "使用电烙铁及工作室硬件前请先阅读。")
 
 ### 3D打印机
 
