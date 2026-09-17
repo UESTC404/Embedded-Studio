@@ -32,6 +32,16 @@ QQ🐧招新群号: 1061735845
 
 ***软硬一体，嵌入无疆！***
 
+## 工作室风采
+
+**2025.11.28** 工作室在2025年度评比中斩获**集体一等奖**和**最佳活动开展成就奖**，实至名归！
+
+![工作室获评集体一等奖和最佳活动开展成就奖](/images/studio-awards-2025.png#medium)
+
+**2025.09.27** 工作室成功举办成立15周年庆典活动！感谢所有为之努力的盆友们🎉🎉
+
+![嵌入式工作室成立十五周年庆典合影](/images/studio-15th-anniversary.png#wide)
+
 ## 指导老师
 
 **廖勇老师**现任电子科技大学信息与软件工程学院副院长，长期指导工作室的学习、研究与实践。
@@ -101,10 +111,26 @@ QQ🐧招新群号: 1061735845
 
 ## 通向大牛的第一步
 
+### 嵌入式相关
+
 - [awesome-es：嵌入式与体系结构学习资源](https://github.com/UESTC404/awesome-es#card "由工作室前辈整理，汇集软件学院本科阶段计算机体系结构学习与嵌入式开发相关的公开课、书籍、Blog 和资料。")
-- [Learning-In-UESTC：软院学习资料](https://github.com/Fux-i/Learning-In-UESTC#card "由 23 级软院 Fuxi 学长主导创建，包含教材、课后答案、实验报告、课程代码和历年真题等资料。")
-- [UESTC Byte Lib：期末复习指引](https://my.feishu.cn/wiki/AatBwiDa7ig7RJkzdlocLm1cnTh#card "面向电子科技大学同学整理的期末复习指引，适合在备考阶段快速查找课程复习资料。")
+
+### 考研相关
+
 - [CSPostgraduate-408：计算机考研资料](https://github.com/CodePanda66/CSPostgraduate-408#card "计算机考研 408 专业课资料库，收录真题、笔记、思维导图以及部分算法源码。")
+
+### 计算机通识
+
 - [计算机教育中缺失的一课](https://missing-semester-cn.github.io/#card "MIT The Missing Semester 中文版，介绍 Shell、Git、编辑器、调试、性能分析等课堂中容易被忽略的实用工具。")
 - [CS 自学指南](https://csdiy.wiki/#card "汇集世界一流大学的优质计算机课程，为不同基础和方向的同学提供系统化的自学路径。")
+
+### 你电相关资料
+
+- [Learning-In-UESTC：软院学习资料](https://github.com/Fux-i/Learning-In-UESTC#card "由 23 级软院 Fuxi 学长主导创建，包含教材、课后答案、实验报告、课程代码和历年真题等资料。")
+- [UESTC Byte Lib：期末复习指引](https://my.feishu.cn/wiki/AatBwiDa7ig7RJkzdlocLm1cnTh#card "面向电子科技大学同学整理的期末复习指引，适合在备考阶段快速查找课程复习资料。")
+
+### 个人规划
+
 - [上海交通大学生存手册](https://survivesjtu.gitbook.io/survivesjtumanual/li-zhi-pian/huan-ying-lai-dao-shang-hai-jiao-tong-da-xue#card "从自主规划与个人成长的角度讨论大学学习，提醒读者主动选择自己的道路。")
+- [南方科技大学飞跃手册](https://sustech-application.com/#card "汇集南方科技大学同学的升学、留学申请与成长经验，为个人发展规划提供参考。")
+- [清华大学飞跃手册](https://feiyue.online/#card "汇集清华大学同学的升学、留学申请与成长经验，为个人发展规划提供参考。")
